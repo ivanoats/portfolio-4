@@ -1,3 +1,7 @@
 sample_post:
   title: "sample post"
   body: "sample body text"
+
+sample_post_edit:
+  title: "edited post"
+  body: "edited body text"

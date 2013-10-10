@@ -6,13 +6,13 @@ feature "Creating a post" do
 
   #give a completed post form
   click_on 'New Post'
-  fill_in 'Title', with: 'A new hope'
-  fill_in 'Body', with: 'a long time ago'
+  fill_in 'Title', with: posts(:sample_post).title
+  fill_in 'Body', with: posts(:sample_post).body
 
   #when I submit the form
   click_on 'Create Post'
-    page.text.must_include 'A new hope'
-    page.text.must_include 'a long time ago'
+    page.text.must_include posts(:sample_post).title
+    page.text.must_include posts(:sample_post).body
 
 
   #and success message
