@@ -2,7 +2,7 @@ require "test_helper"
 
 feature "Edit A post" do
   scenario "update existing post" do
-    visit post_path(post(:sample_post))
+    visit post_path(posts(:sample_post))
     click_on 'Edit'
     fill_in 'Title', with: posts(:sample_post_edit).title
     fill_in 'Body', with: posts(:sample_post_edit).body

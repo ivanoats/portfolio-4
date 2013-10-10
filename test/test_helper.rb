@@ -12,7 +12,7 @@ require "minitest/rails/capybara"
 
 
 # Uncomment for awesome colorful output
-# require "minitest/pride"
+ require "minitest/pride"
 class ActionDispatch::IntegrationTest
   include Rails.application.routes.url_helpers
   include Capybara::RSpecMatchers
