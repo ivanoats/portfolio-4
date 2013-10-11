@@ -27,6 +27,7 @@ gem 'jquery-rails'
 group :development, :test do
   gem "minitest-rails"
   gem "minitest-rails-capybara"
+gem "sqlite3"
 end
 
 group :test do
