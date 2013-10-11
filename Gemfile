@@ -1,11 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'rails', '3.2.14'
-gem 'launchy'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem "minitest-rails"
 
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
@@ -27,11 +25,9 @@ gem 'jquery-rails'
 group :development, :test do
   gem "minitest-rails"
   gem "minitest-rails-capybara"
-gem "sqlite3"
-end
-
-group :test do
-  gem "minitest-rails-capybara"
+  gem "sqlite3"
+  gem 'launchy'
+  gem 'capybara-webkit'
 end
 
 group :production do
