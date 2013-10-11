@@ -34,8 +34,6 @@ group :test do
   gem "minitest-rails-capybara"
 end
 
-gem 'rails_12factor', group: :production
-
 group :production do
   gem 'pg'
   gem 'rails_12factor'
