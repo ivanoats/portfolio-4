@@ -5,8 +5,10 @@ gem 'launchy'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem "minitest-rails"
+
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,6 +31,12 @@ end
 
 group :test do
   gem "minitest-rails-capybara"
+end
+
+gem 'rails_12factor', group: :production
+
+group :production do
+  gem 'pg'
 end
 
 # To use ActiveModel has_secure_password
