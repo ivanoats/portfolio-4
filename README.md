@@ -19,5 +19,7 @@ Screenshots of your application below:
 
 ![Screenshot 1](http://i40.tinypic.com/x4g8ps.png)
 
+[![Build Status](https://travis-ci.org/andrebautista/portfolio.png?branch=master)](https://travis-ci.org/andrebautista/portfolio)
+
 
 
