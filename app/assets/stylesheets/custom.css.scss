@@ -4,16 +4,26 @@
 
 body  {
   padding-top: 70px;
+  background-color: white;
+
 }
 
 .navbar  {
   background-color: #f89723;
-    border-radius: 0px;
+  border-radius: 0px;
+  box-shadow: 0px 1px 1px #58585A;
+
+
 }
 
 .navbar-brand  {
   font-size: 2em;
   color: #58585A;
+}
+
+.page-text  {
+  background-color: rgb(254,241,225);
+  box-shadow: 0px 0px 1px #58585A
 }
 
 .navbar-toggle  {
