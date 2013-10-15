@@ -1,7 +1,7 @@
 require "test_helper"
 
 feature "DeleteAPost" do
-  scenario "test was deleted" do
+  scenario "post was deleted" do
 
     @post_value= posts(:sample_post).id
     #open post
