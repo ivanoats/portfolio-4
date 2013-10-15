@@ -4,12 +4,28 @@ feature "As the site owner, I want to add a portfolio item so that I can show of
   scenario "adding a new project" do
     visit projects_path
     click_on "New project"
-    fill_in "Name", with: "Code Fellows Portfolio"
-    fill_in "Technologies used", with: "Rails, Ruby, Bootstrap, HTML5, CSS3"
-    save_and_open_page
+    fill_in "Name", with: projects(:one).name
+    fill_in "Technologies used", with: projects(:one).technologies_used
     click_on "Create Project"
     page.text.must_include "Project was successfully created"
-    page.text.must_include "Code Fellows Portfolio"
-    page.text.must_include "Rails"
+    page.text.must_include projects(:one).name
+    page.text.must_include projects(:one).technologies_used
   end
+
+
+  scenario "new project has invalid data" do
+    #given invalid project data is entered in a form
+    visit new_project_path
+    fill_in "Name", with: projects(:invalid_data).name
+
+    #when the form is submitted with a short name and missing technologies_used field
+    click_on "Create Project"
+
+    #then the form should be displayed again, with an error message.
+    current_path.must_match /projects$/
+    page.text.must_include "Project could not be saved"
+    page.text.must_include "Name is too short"
+    page.text.must_include "Technologies used can't be blank"
+  end
+
 end
