@@ -5,7 +5,17 @@
 body  {
   padding-top: 70px;
   background-color: white;
+}
 
+.icons  {
+  list-style: none;
+  padding-left: 0px;
+  display: inline;
+}
+
+.icons > li  {
+  float: left;
+  padding-right: 5px;
 }
 
 .navbar  {

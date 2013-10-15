@@ -12,7 +12,7 @@ gem 'rails', '3.2.14'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+  gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -21,6 +21,10 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
 end
 
 gem 'jquery-rails'
+
+group :development do
+  gem 'pry'
+end
 
 group :development, :test do
   gem "minitest-rails"
