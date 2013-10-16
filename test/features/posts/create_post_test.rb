@@ -3,6 +3,8 @@ require "test_helper"
 feature "Creating a post" do
   scenario "works with valid data" do
     visit posts_path
+  #given a signed_in user
+  sign_in_user
 
   #give a completed post form
   click_on 'New Post'
