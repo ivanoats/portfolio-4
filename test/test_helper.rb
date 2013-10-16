@@ -31,6 +31,6 @@ end
 def sign_in_user
   visit new_user_session_path
   fill_in "Email", with: users(:one).email
-  fill_in "Password", with: users(:one).password
+  fill_in "Password", with: "password"
   click_on "Sign in"
-
+end

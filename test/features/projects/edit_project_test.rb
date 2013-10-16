@@ -2,8 +2,8 @@ require "test_helper"
 
 feature "As the site owner, I want to edit a project so that I can correct typos" do
   scenario "editing an existing project" do
+    sign_in_user
     visit edit_project_path(projects(:one))
-
     #when I make changes
     fill_in "Name", with: projects(:two).name
     click_on "Update Project"
@@ -16,6 +16,7 @@ feature "As the site owner, I want to edit a project so that I can correct typos
 
   scenario "bad data in an edit form" do
     #given invalid data
+    sign_in_user
     visit edit_project_path(projects(:one))
     fill_in "Name", with: projects(:invalid_data).name
     click_on "Update Project"

@@ -2,8 +2,9 @@ require "test_helper"
 
 feature "As the site owner, I want to add a portfolio item so that I can show off my work" do
   scenario "adding a new project" do
-    visit projects_path
-    click_on "New project"
+    #given a valid user
+    sign_in_user
+    visit new_project_path
     fill_in "Name", with: projects(:one).name
     fill_in "Technologies used", with: projects(:one).technologies_used
     click_on "Create Project"
@@ -15,6 +16,7 @@ feature "As the site owner, I want to add a portfolio item so that I can show of
 
   scenario "new project has invalid data" do
     #given invalid project data is entered in a form
+    sign_in_user
     visit new_project_path
     fill_in "Name", with: projects(:invalid_data).name
 
