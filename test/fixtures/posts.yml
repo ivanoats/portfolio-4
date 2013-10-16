@@ -1,7 +1,9 @@
 sample_post:
   title: "sample post"
   body: "sample body text"
+  author: "one"
 
 sample_post_edit:
   title: "edited post"
   body: "edited body text"
+  author: "two"

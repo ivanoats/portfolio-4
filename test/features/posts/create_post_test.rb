@@ -16,5 +16,7 @@ feature "Creating a post" do
 
     #and success message
     page.text.must_include 'Post was successfully created'
+    page.has_css? "#author"
+    page.text.must_include users(:one).email
   end
 end
