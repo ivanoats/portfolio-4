@@ -1,4 +1,6 @@
 MyPortfolio::Application.routes.draw do
+  devise_for :users
+
   resources :posts
   resources :projects
   root to: 'static_pages#index'
