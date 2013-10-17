@@ -40,6 +40,10 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :test do
+  gem 'simplecov', :require => false
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
