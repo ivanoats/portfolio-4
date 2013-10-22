@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = policy_scope(Post)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
-
+    authorize @post
     respond_to do |format|
       if @post.save
         current_user.posts << @post

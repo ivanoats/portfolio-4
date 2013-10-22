@@ -2,8 +2,16 @@ sample_post:
   title: "sample post"
   body: "sample body text"
   author: "one"
+  published: true
 
 sample_post_edit:
   title: "edited post"
   body: "edited body text"
   author: "two"
+  published: true
+
+unpublished:
+  title:  "unpublished"
+  body: "this is an unpublished post"
+  author: "two"
+  published: "false"

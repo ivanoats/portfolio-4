@@ -106,6 +106,8 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pundit (0.2.1)
+      activesupport (>= 3.0.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -182,6 +184,7 @@ DEPENDENCIES
   minitest-rails-capybara
   pg
   pry
+  pundit
   rails (= 3.2.14)
   rails_12factor
   sass-rails (~> 3.2.3)

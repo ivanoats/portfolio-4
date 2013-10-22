@@ -6,7 +6,9 @@ feature "
       my session my account is secure" do
   scenario "sign out current user" do
     visit new_user_session_path
-    sign_in_user
+    fill_in "Email", with: users(:one).email
+    fill_in "Password", with: "password"
+    click_on "Sign in"
     page.must_have_content "Signed in successfully"
     page.must_have_content "Sign Out"
 
