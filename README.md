@@ -10,7 +10,7 @@ By [Andre Bautista](author URL goes here).
 [![Code Climate](Code Climate Badge IMG URL goes here)](Code Climate URL goes here)
 
 ## Description
-**Andre's Portfolio** The start of my code fellows portfolio.
+**Andre's Portfolio** The start of my code fellows portfolio.  Will get better over time.
 
 
 ## Information
