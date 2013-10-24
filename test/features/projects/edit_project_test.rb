@@ -26,3 +26,5 @@ feature "As the site owner, I want to edit a project so that I can correct typos
     page.text.must_include "Name is too short"
   end
 end
+
+#useless comment
