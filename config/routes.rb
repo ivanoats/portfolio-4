@@ -9,7 +9,10 @@ MyPortfolio::Application.routes.draw do
   resources :posts do
     resources :comments
   end
-  resources :projects
+  resources :projects do
+    resources :comments
+  end
+
   root to: 'static_pages#index'
 
 

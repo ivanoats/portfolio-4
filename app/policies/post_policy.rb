@@ -2,7 +2,7 @@ class PostPolicy < ApplicationPolicy
     attr_reader :user, :post
 
     def initialize(user, post)
-     @user = user
+      @user = user
       @post = post
     end
 
@@ -25,7 +25,7 @@ class PostPolicy < ApplicationPolicy
       end
     end
 
-  class Scope < Struct.new(:user, :scope)
+  Scope = Struct.new(:user, :scope) do
     def resolve
       if user.present? && user.editor?
         scope.all
