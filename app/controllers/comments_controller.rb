@@ -2,14 +2,8 @@ class CommentsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_commentable
 
-
-  def index
-    @comments = @commentable.comments
-  end
-
   def create
     @comment = @commentable.comments.new(params[:comment])
-    if @comment.save
       flash[:notice] = "Comment is awaiting moderation"
       redirect_to @commentable
     else
@@ -18,6 +12,17 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @commentable = @comment.commentable
+    if @comment.destroy
+      respond_to do |format|
+        format.html { redirect_to @commentable, notice: "Comment deleted."}
+      end
+    end
+  end
+
+
 private
 
   def load_commentable
@@ -25,4 +30,4 @@ private
     @commentable = @resource.singularize.classify.constantize.find(id)
     #same as post/project.find(id)
   end
-end
+

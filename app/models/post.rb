@@ -1,7 +1,6 @@
 class Post < ActiveRecord::Base
-  attr_accessible :body, :title, :published, :post_id, :content
-  has_many :comments, as: :commentable
   belongs_to :author, class_name: "User"
+  has_many :comments, as: :commentable
   scope :published, where(published: true)
   def publish!
     published = true

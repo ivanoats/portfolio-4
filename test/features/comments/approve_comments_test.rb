@@ -1,6 +1,7 @@
 require 'test_helper'
 feature "As an author or editor I want to approve comments so there's no spam " do
-  def new_comment
+
+  before do
     sign_in_user(users(:viewer))
     visit post_path(posts(:sample_post))
     fill_in :comment_author,       with: "troll"
@@ -12,13 +13,11 @@ feature "As an author or editor I want to approve comments so there's no spam " 
   end
 
   scenario "Comments not be displayed until approved" do
-    new_comment
     visit post_path(posts(:sample_post))
     page.wont_have_content "trolling"
   end
 
   scenario "editor can approve comment" do
-    new_comment
     save_and_open_page
     sign_in_user(users(:editor))
 

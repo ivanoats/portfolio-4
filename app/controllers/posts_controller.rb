@@ -16,8 +16,9 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-    @comment = Comment.new
     @commentable = @post
+    @comments = @commentable.comments
+    @comment = Comment.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
@@ -37,13 +38,13 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
+    authorize @post
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
     authorize @post
     respond_to do |format|
       if @post.save
@@ -60,6 +61,7 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
+    authorize @post
     @post = Post.find(params[:id])
 
     respond_to do |format|
@@ -84,4 +86,5 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

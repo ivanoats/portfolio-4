@@ -20,6 +20,13 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @commentable = @project
+    @comments = @commentable.comments
+    @comment = Comment.new
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @post }
+    end
   end
 
   def edit
@@ -45,6 +52,4 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-
 end
