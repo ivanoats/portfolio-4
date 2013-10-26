@@ -5,12 +5,12 @@ feature "As the site owner, I want to edit a project so that I can correct typos
     sign_in_user(users(:one))
     visit edit_project_path(projects(:one))
     #when I make changes
-    fill_in "Name", with: projects(:two).name
+    fill_in "Name", with: projects(:author).name
     click_on "Update Project"
 
     #then the changes should be saved and shown
     page.text.must_include "success"
-    page.text.must_include projects(:two).name
+    page.text.must_include projects(:author).name
     page.text.wont_include projects(:one).name
   end
 

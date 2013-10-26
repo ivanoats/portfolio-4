@@ -6,8 +6,9 @@ feature "Creating a post" do
     sign_in_user(users(:one))
     visit new_post_path
 
-    fill_in 'Title', with: posts(:sample_post).title
-    fill_in 'Body', with: posts(:sample_post).body
+    fill_in "Title", with: posts(:sample_post).title
+    fill_in "Body", with: posts(:sample_post).body
+
 
     #when I submit the form
     click_on 'Create Post'

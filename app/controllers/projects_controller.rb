@@ -46,6 +46,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
+    authorize @project
 
     respond_to do |format|
       format.html { redirect_to posts_url }

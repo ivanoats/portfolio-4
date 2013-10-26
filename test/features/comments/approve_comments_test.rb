@@ -18,9 +18,7 @@ feature "As an author or editor I want to approve comments so there's no spam " 
   end
 
   scenario "editor can approve comment" do
-    save_and_open_page
     sign_in_user(users(:editor))
-
     visit post_path(posts(:sample_post))
     click_on "Approve"
     click_on "Sign Out"

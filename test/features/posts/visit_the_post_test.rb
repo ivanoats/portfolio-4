@@ -18,7 +18,7 @@ feature "VisitThePost" do
   end
 
   scenario "with existing posts, author" do
-    sign_in_user(users(:two))
+    sign_in_user(users(:author))
     visit posts_path
     page.text.must_include posts(:sample_post_edit).title
     page.text.must_include posts(:unpublished).title

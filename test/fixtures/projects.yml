@@ -2,7 +2,7 @@ one:
   name: "Code Fellows Portfolio"
   technologies_used: "Rails"
 
-two:
+author:
   name: "Second Project"
   technologies_used: "Java"
 

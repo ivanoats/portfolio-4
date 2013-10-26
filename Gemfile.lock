@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/anjlab/bootstrap-rails.git
-  revision: 8826a3bfbbcfb18709f0e8bb0eff9cf921a479c3
+  revision: 4f5c0167fc7722940f67701a5279a9427692d92f
   specs:
     anjlab-bootstrap-rails (3.0.0.3)
       railties (>= 3.0)
@@ -37,6 +37,7 @@ GEM
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     addressable (2.3.5)
+    ansi (1.4.3)
     arel (3.0.2)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
@@ -175,6 +176,8 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    turn (0.9.6)
+      ansi
     tzinfo (0.3.38)
     uglifier (2.2.1)
       execjs (>= 0.3.0)
@@ -206,4 +209,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simplecov
   sqlite3
+  turn
   uglifier (>= 1.0.3)

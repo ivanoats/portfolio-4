@@ -14,12 +14,11 @@
     <% end %>
     <% if current_user && current_user.editor? %>
       <tr>
-        <% if comment.approved? %>
-          <td><%= button_to 'Delete', post_comment_path(@commentable, comment), method: :delete %></td>
-        <% else %>
+        <td><%= button_to 'Delete', post_comment_path(@commentable, comment), method: :delete %></td>
+        <% unless comment.approved? %>
           <td><%= button_to 'Approve', post_comment_path(@commentable, comment, comment: {approved: true}), method: :put %> </td>
-        <tr>
         <% end %>
+      <tr>
     <% end %>
   </table><br>
 <% end %>

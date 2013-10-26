@@ -1,7 +1,7 @@
 require "test_helper"
 
 def set_up_author_post
-  sign_in_user(users(:two))
+  sign_in_user(users(:author))
   visit posts_path
   click_on "New Post"
   fill_in "Title", with: "author's title"

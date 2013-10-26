@@ -5,7 +5,7 @@ gem 'devise'
 gem 'pundit'
 gem 'omniauth-twitter'
 gem 'figaro'
-
+gem 'turn'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

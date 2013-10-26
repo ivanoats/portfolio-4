@@ -16,7 +16,9 @@
 </p>
 
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<% if policy(@post).destroy? %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
 <%= link_to 'Back', posts_path %>
 
 <%= render "layouts/commentshow" %>
