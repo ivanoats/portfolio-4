@@ -22,7 +22,7 @@ feature "Creating a post" do
   end
 
   scenario "Authors can't publish" do
-    sign_in_user(users(:one))
+    sign_in_user(users(:author))
     visit new_post_path
     #no checkbox for published
     page.wont_have_field ('published')
