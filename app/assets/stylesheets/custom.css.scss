@@ -4,7 +4,7 @@
 
 body  {
   padding-top: 70px;
-  background-color: rgb(254,241,225);;
+  background-color: white;
 }
 
 .icons  {
@@ -122,3 +122,17 @@ a.nav-link {
     }
   }
 }
+
+.connect-center {
+float:left;
+width:100%;
+display: block;
+text-align: center;
+margin-bottom: 0px;
+
+  li  {
+    display: inline;
+  }
+}
+
+
