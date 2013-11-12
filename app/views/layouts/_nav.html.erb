@@ -1,0 +1,24 @@
+<nav class="fixed-nav">
+  <div class="left" id="signature">
+     <%= link_to image_tag("me.jpg", alt: "me", id: "my-pic"), "http://dreb.herokuapp.com" %>
+  </div>
+  <div class="middle">
+    <div id="headline">
+      <div id="tag">
+        I'm Andre, a Rails developer
+      </div>
+    </div>
+    <div id="nav-buttons">
+      <%= link_to "Blog", posts_path, id:"blog" %>
+      <%= link_to "Projects", projects_path, id: "projects" %>
+    </div>
+  </div>
+  <div class="right">
+    <ul class="social">
+      <li>
+        <%=image_tag("github.png", alt: "github", class:"soc-icon")%>
+        <a href="http://github.com/andrebautista">Github</a>
+      </li>
+    </ul>
+  </div>
+</nav>
