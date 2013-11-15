@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   def index
     @projects = Project.all
+
   end
 
   def new
@@ -12,7 +13,10 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
       if @project.save
         flash[:notice] = "Project was successfully created"
-        redirect_to @project
+        respond_to do |format|
+          format.html {  redirect_to @project  }
+          format.js
+        end
       else
         render :new
       end
@@ -28,7 +32,6 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-
     if @project.update_attributes(params[:project])
       redirect_to @project, notice: 'Project was successfully updated.'
     else
@@ -42,7 +45,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to projects_url }
-      format.json { head :no_content }
+      format.jsxp
     end
   end
 end
