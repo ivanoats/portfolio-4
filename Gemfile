@@ -36,6 +36,8 @@ group :development, :test do
   gem "sqlite3"
   gem 'launchy'
   gem 'capybara-webkit'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 group :production do

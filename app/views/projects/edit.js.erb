@@ -1,1 +1,8 @@
-$('#edit_project_link').closest('.project').append('<%= j render("form") %>');
+$("<%= "#edit_project_link_#{@project.id}" %>").closest('.project').append('<%= j render("form") %>');
+$("<%= "#edit_project_link_#{@project.id}" %>").hide();
+$("#back_link").on("click", function()  {
+    $('#edit_project_<%= @project.id %>').remove();
+    $("#back_link").remove();
+    $("<%= "#edit_project_link_#{@project.id}" %>").show();
+});
+

@@ -1,3 +1,5 @@
-$(document)
-$('.edit_project').remove();
-$('.')
+$("#<%= "project_#{@project.id}" %>").replaceWith('<%= j render(@project) %>');
+$("#edit_project_<%= @project.id %>").remove();
+$("#back_link").remove();
+
+

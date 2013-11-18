@@ -12,7 +12,6 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
       if @project.save
-        flash[:notice] = "Project was successfully created"
         respond_to do |format|
           format.html {  redirect_to @project  }
           format.js
@@ -28,12 +27,19 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    respond_to do |format|
+          format.html
+          format.js
+    end
   end
 
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
-      redirect_to @project, notice: 'Project was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.js
+      end
     else
       render :edit
     end
@@ -42,10 +48,9 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
-
     respond_to do |format|
       format.html { redirect_to projects_url }
-      format.jsxp
+      format.js
     end
   end
 end

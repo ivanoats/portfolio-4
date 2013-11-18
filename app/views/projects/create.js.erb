@@ -1,3 +1,5 @@
 $('#new_project').remove();
 $('#create_project_link').show();
-$('.project:last').append('<%= j render(@project) %>');
+$('.project:last').after('<%= j render(@project) %>');
+$("<%= "#edit_project_link_#{@project.id}" %>").show();
+$("#back_link").remove();

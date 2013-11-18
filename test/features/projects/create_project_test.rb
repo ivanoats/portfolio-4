@@ -33,4 +33,14 @@ feature "As the site owner, I want to add a portfolio item so that I can show of
     page.text.must_include "Technologies used can't be blank"
   end
 
+  scenario "using ajax to create project", js: true do
+    visit projects_path
+    click_on "New project"
+    fill_in "Name", with: projects(:one).name
+    fill_in "Technologies used", with: projects(:one).technologies_used
+    click_on "Create Project"
+    page.text.must_include projects(:one).name
+    page.text.must_include projects(:one).technologies_used
+  end
+
 end
