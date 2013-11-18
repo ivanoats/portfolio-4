@@ -5,7 +5,7 @@ gem 'devise'
 gem 'pundit'
 gem 'omniauth-twitter'
 gem 'figaro'
-
+gem 'carrierwave'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
