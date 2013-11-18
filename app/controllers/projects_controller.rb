@@ -2,7 +2,6 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   def index
     @projects = Project.all
-
   end
 
   def new
@@ -11,14 +10,14 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(params[:project])
-      if @project.save
-        respond_to do |format|
-          format.html {  redirect_to @project  }
-          format.js
-        end
-      else
-        render :new
+    if @project.save
+      respond_to do |format|
+        format.html {  redirect_to @project  }
+        format.js
       end
+    else
+      render :new
+    end
   end
 
   def show
@@ -28,8 +27,8 @@ class ProjectsController < ApplicationController
   def edit
     @project = Project.find(params[:id])
     respond_to do |format|
-          format.html
-          format.js
+      format.html
+      format.js
     end
   end
 
